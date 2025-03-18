@@ -1,0 +1,25 @@
+﻿services:
+  
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      - "5552:5552"    # Stream порт
+    command: >
+      sh -c "
+        rabbitmq-plugins enable rabbitmq_stream &&
+        rabbitmq-server
+      " 
+    healthcheck:
+      test: [ "CMD", "rabbitmq-diagnostics", "status" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  rabbitmq_data:
+    driver: local
