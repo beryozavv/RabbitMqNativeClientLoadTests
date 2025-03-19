@@ -94,7 +94,7 @@ public class ActionStreamQueueChannelBasicProducer
         var sw = Stopwatch.StartNew();
         for (int i = 0; i < MessageCount; i++)
         {
-            await actionBlock.SendAsync($"Message {i}");
+            actionBlock.Post($"Message {i}");
         }
 
         // Ожидание завершения всех задач

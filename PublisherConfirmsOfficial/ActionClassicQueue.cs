@@ -102,7 +102,7 @@ public class ActionClassicQueue : IDisposable
         // Публикация сообщений
         for (int i = 0; i < MessageCount; i++)
         {
-            await actionBlock.SendAsync(i);
+            actionBlock.Post(i);
         }
 
         actionBlock.Complete();

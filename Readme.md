@@ -1,6 +1,6 @@
 # Официальные примеры были скопированы из официальной документации
 Источники:  
-https://www.rabbitmq.com/tutorials/tutorial-seven-dotnet
+https://www.rabbitmq.com/tutorials/tutorial-seven-dotnet    
 https://github.com/rabbitmq/rabbitmq-tutorials/blob/main/dotnet/PublisherConfirms/PublisherConfirms.cs
 
 # Проекты разделены по типам очередей
